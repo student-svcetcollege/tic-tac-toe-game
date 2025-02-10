@@ -2,63 +2,103 @@ body {
     background: linear-gradient(45deg, pink, lightgreen, rgb(237, 237, 125), rgb(137, 230, 137), lightblue, rgb(189, 54, 54));
     background-repeat: no-repeat;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
 .container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    margin-top: 50px;
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
 }
+
 .item {
     display: grid;
-    grid-template-columns: repeat(3, 5vw);
-    grid-template-rows: repeat(3, 5vw);
-    position: relative;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1;
+    margin-top: 20px;
 }
+
 .box {
     border: 2px solid black;
-    font-size: 3vw;
+    font-size: 6vw;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .box:hover {
     background-color: blueviolet;
 }
+
 .boxtext {
-    font-size: 50px;
+    font-size: 8vw;
 }
+
 .gameinfo {
-    padding-left: 50px;
+    padding: 20px;
     font-style: italic;
+    text-align: center;
 }
+
 .info {
     padding-top: 10px;
-    font-size: 40px;
+    font-size: 5vw;
     font-style: italic;
 }
+
 #reset {
     border-radius: 30px;
-    font-size: 30px;
+    font-size: 4vw;
     padding: 10px 20px;
     cursor: pointer;
     background-color: lightpink;
     font-style: italic;
-    margin-left: 10px;
+    margin-top: 20px;
+    border: none;
 }
+
 #reset:hover {
     background-color: rgb(222, 199, 244);
 }
+
 .imgbox img {
     width: 0;
     transition: width 1s ease-in-out;
 }
+
 .bt-0 { border-top: 0; }
 .bl-0 { border-left: 0; }
 .br-0 { border-right: 0; }
 .bb-0 { border-bottom: 0; }
+
+@media (max-width: 600px) {
+    .box {
+        font-size: 8vw;
+    }
+    .boxtext {
+        font-size: 10vw;
+    }
+    .info {
+        font-size: 6vw;
+    }
+    #reset {
+        font-size: 5vw;
+        padding: 8px 16px;
+    }
+}
